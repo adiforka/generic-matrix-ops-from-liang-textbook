@@ -4,9 +4,7 @@ abstract class GenericMatrix<E extends Number> {
 
     //these to be implemented in extending class (see IntegerMatrix)
     protected abstract E add(E o1, E o2);
-
     protected abstract E multiply(E o1, E o2);
-
     protected abstract E zero();
 
     public E[][] addMatrix(E[][] matrix1, E[][] matrix2) {
@@ -37,6 +35,7 @@ abstract class GenericMatrix<E extends Number> {
      * 4) to get m3[1][0] ust row1 in m1 against col0 in m2 (again, multiply elements, sum up, store in m3)
      *
      * 5) size of m3: m3 will have no of rows == no columns in m2, and no of columns == no of rows in m1*/
+
     public E[][] multiplyMatrix(E[][] matrix1, E[][] matrix2) {
         if (matrix1[0].length != matrix2.length) {
             throw new RuntimeException("The matrices do not have compatible size");
